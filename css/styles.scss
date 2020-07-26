@@ -329,7 +329,11 @@ header {
 
 //contact
 #contact {
-  width: 50vw;
+  width: 90vw;
+
+  @include mediaQ($phablet) {
+    width: 70vw;
+  }
 
   h2 {
     @include section-header();

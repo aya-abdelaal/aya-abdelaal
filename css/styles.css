@@ -348,7 +348,13 @@ header #header-ctas {
 }
 
 #contact {
-  width: 50vw;
+  width: 90vw;
+}
+
+@media screen and (min-width: 481px) {
+  #contact {
+    width: 70vw;
+  }
 }
 
 #contact h2 {
