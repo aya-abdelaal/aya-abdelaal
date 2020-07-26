@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  border: 1px solid white;
+  background: transparent;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+button:hover {
+  -webkit-animation: make3DText ease-in-out 0.7s infinite, make3DBorder ease-in-out 0.7s infinite;
+          animation: make3DText ease-in-out 0.7s infinite, make3DBorder ease-in-out 0.7s infinite;
+}
+
+button a {
+  padding: 1.5rem;
+}
+
+section {
+  margin: 3rem auto;
+  position: relative;
+  opacity: 0;
+  bottom: -100px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: black;
+  color: white;
+}
+
+header {
+  width: 100vw;
+  height: 80vh;
+  background: url(../images/wallpapers/1295383.jpg) no-repeat center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+header #header-bg {
+  position: absolute;
+  top: 0;
+  height: 83vh;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0.6)), color-stop(rgba(0, 0, 0, 0.8)), to(black));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), black);
+  z-index: 0;
+}
+
+header #header-content {
+  z-index: 1;
+}
+
+header h1 {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-size: 3.5rem;
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0.3rem;
+  padding-left: 3px;
+}
+
+@media screen and (min-width: 1025px) {
+  header h1 {
+    font-size: 3.8rem;
+    padding-left: 5px;
+  }
+}
+
+header h3 {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0.3rem;
+}
+
+@media screen and (min-width: 1025px) {
+  header h3 {
+    font-size: 2.5rem;
+  }
+}
+
+header h3 .tags {
+  opacity: 0;
+  -webkit-animation: make3DText ease-in-out 0.7s 3s 2;
+          animation: make3DText ease-in-out 0.7s 3s 2;
+}
+
+header #socials {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+header #socials a {
+  display: inline-block;
+  margin: 1rem;
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+}
+
+header #socials a:hover {
+  font-size: 2rem;
+  color: #e6e6e6;
+  -webkit-animation: make3DText ease-in-out 0.7s infinite;
+          animation: make3DText ease-in-out 0.7s infinite;
+}
+
+header #header-ctas {
+  text-align: center;
+}
+
+#navbar {
+  position: fixed;
+  top: -70px;
+  width: 100vw;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+  z-index: 2;
+  font-size: 1.3rem;
+  padding-right: 1.5rem;
+  background: black;
+}
+
+#navbar a {
+  display: inline-block;
+  padding: 1.2rem;
+  margin: 1rem;
+}
+
+#navbar a:hover {
+  -webkit-animation: make3DText ease-in-out 0.7s infinite;
+          animation: make3DText ease-in-out 0.7s infinite;
+}
+
+#work {
+  padding: 1.2rem;
+  width: 90vw;
+}
+
+@media screen and (min-width: 550px) {
+  #work {
+    width: 85vw;
+  }
+}
+
+#work h2 {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  margin: 1.5rem;
+}
+
+#work > p {
+  display: block;
+  text-align: center;
+}
+
+#work #work-container {
+  margin: 2rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 2.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  #work #work-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #work #work-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+#work #work-container .work-item {
+  position: relative;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  #work #work-container .work-item {
+    min-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #work #work-container .work-item {
+    min-width: 33%;
+  }
+}
+
+#work #work-container .work-item img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: auto;
+}
+
+#work #work-container .work-item .item-text {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
+}
+
+#work #work-container .work-item .item-text h4 {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+#work #work-container .work-item .item-text p {
+  margin: 0.7rem;
+}
+
+#work #work-container .work-item .item-text button {
+  padding: 1rem;
+  margin: 1rem;
+  display: inline-block;
+}
+
+#work #work-container .work-item:hover {
+  -webkit-animation: make3DBorder ease-in-out 1.2s infinite;
+          animation: make3DBorder ease-in-out 1.2s infinite;
+}
+
+#work #work-container .work-item:hover .item-text {
+  -webkit-animation: workItemText ease-in-out 0.7s forwards;
+          animation: workItemText ease-in-out 0.7s forwards;
+}
+
+#skills {
+  width: 90vw;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills #skills-bg {
+  color: #0d0d0d;
+  position: absolute;
+  display: inline-block;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 18rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 1.2rem;
+  z-index: -1;
+}
+
+@media screen and (min-width: 481px) {
+  #skills #skills-bg {
+    font-size: 23rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  #skills #skills-bg {
+    font-size: 26rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #skills #skills-bg {
+    font-size: 45rem;
+  }
+}
+
+#skills h2 {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  margin: 3rem;
+}
+
+#skills #skills-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+#skills #skills-container h4 {
+  margin: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#contact {
+  width: 50vw;
+}
+
+#contact h2 {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+
+#contact ul {
+  list-style-type: none;
+  margin: 1em;
+}
+
+#contact ul li {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+#contact ul li i {
+  margin: 1.5rem;
+}
+
+#contact ul li a {
+  text-decoration: underline;
+}
+
+#contact ul li a:hover {
+  -webkit-animation: make3DText ease-in-out 0.7s infinite;
+          animation: make3DText ease-in-out 0.7s infinite;
+}
+
+@-webkit-keyframes make3DText {
+  0%,
+  100% {
+    text-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    text-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    text-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    text-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@keyframes make3DText {
+  0%,
+  100% {
+    text-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    text-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    text-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    text-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@-webkit-keyframes make3DBorder {
+  0%,
+  100% {
+    -webkit-box-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+            box-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    -webkit-box-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+            box-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    -webkit-box-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+            box-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    -webkit-box-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+            box-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@keyframes make3DBorder {
+  0%,
+  100% {
+    -webkit-box-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+            box-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    -webkit-box-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+            box-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    -webkit-box-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+            box-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    -webkit-box-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+            box-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@-webkit-keyframes workItemText {
+  from {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+    opacity: 0;
+  }
+  to {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 16% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 16% 100%, 100% 100%, 100% 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes workItemText {
+  from {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+    opacity: 0;
+  }
+  to {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 16% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 16% 100%, 100% 100%, 100% 0%);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,426 @@
+//reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//mixins for DRY
+@mixin section-header() {
+  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+
+@mixin flex-center() {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+//media queries
+$phablet: 481px;
+$tablet: 550px;
+$laptop: 769px;
+$desktop: 1025px;
+$XlargeScreen: 1201px;
+
+@mixin mediaQ($minWidth) {
+  @media screen and (min-width: $minWidth) {
+    @content;
+  }
+}
+
+//global styles
+
+//links
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+//buttons (and links in buttons)
+button {
+  border: 1px solid white;
+  background: transparent;
+  padding: 1.5rem;
+  margin: 1rem;
+
+  &:hover {
+    animation: make3DText ease-in-out 0.7s infinite,
+      make3DBorder ease-in-out 0.7s infinite;
+  }
+
+  a {
+    padding: 1.5rem;
+  }
+}
+
+//sections
+section {
+  margin: 3rem auto;
+  position: relative;
+  opacity: 0;
+  bottom: -100px;
+}
+
+//smooth-scroll and bg
+html {
+  scroll-behavior: smooth;
+  background: black;
+  color: white;
+}
+
+//header
+header {
+  width: 100vw;
+  height: 80vh;
+  background: url(../images/wallpapers/1295383.jpg) no-repeat center;
+  background-size: cover;
+  @include flex-center();
+  flex-direction: column;
+  position: relative;
+
+  #header-bg {
+    position: absolute;
+    top: 0;
+    height: 83vh;
+    width: 100%;
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgb(0, 0, 0)
+    );
+    z-index: 0;
+  }
+
+  #header-content {
+    z-index: 1;
+  }
+
+  h1 {
+    @include section-header();
+    font-size: 3.5rem;
+    font-family: "Inconsolata", monospace;
+    letter-spacing: 0.3rem;
+    padding-left: 3px;
+
+    @include mediaQ($desktop) {
+      font-size: 3.8rem;
+      padding-left: 5px;
+    }
+  }
+
+  h3 {
+    @include section-header();
+    font-family: "Inconsolata", monospace;
+    letter-spacing: 0.3rem;
+
+    @include mediaQ($desktop) {
+      font-size: 2.5rem;
+    }
+
+    .tags {
+      opacity: 0;
+      animation: make3DText ease-in-out 0.7s 3s 2;
+    }
+  }
+
+  #socials {
+    margin: 1.5rem;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      margin: 1rem;
+      transition: ease 0.2s;
+
+      &:hover {
+        font-size: 2rem;
+        color: darken(#fff, 10%);
+        animation: make3DText ease-in-out 0.7s infinite;
+      }
+    }
+  }
+
+  #header-ctas {
+    text-align: center;
+  }
+}
+
+//navbar
+#navbar {
+  position: fixed;
+  top: -70px;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  transition: ease 0.5s;
+  z-index: 2;
+  font-size: 1.3rem;
+  padding-right: 1.5rem;
+  background: black;
+
+  a {
+    display: inline-block;
+    padding: 1.2rem;
+    margin: 1rem;
+
+    &:hover {
+      animation: make3DText ease-in-out 0.7s infinite;
+    }
+  }
+}
+
+//work section
+#work {
+  padding: 1.2rem;
+  width: 90vw;
+
+  @include mediaQ($tablet) {
+    width: 85vw;
+  }
+
+  h2 {
+    @include section-header();
+    margin: 1.5rem;
+  }
+
+  > p {
+    display: block;
+    text-align: center;
+  }
+
+  #work-container {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2.5rem;
+
+    @include mediaQ($laptop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mediaQ($desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .work-item {
+      position: relative;
+      min-width: 100%;
+
+      @include mediaQ($laptop) {
+        min-width: 50%;
+      }
+
+      @include mediaQ($desktop) {
+        min-width: 33%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        margin: auto;
+      }
+
+      .item-text {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+
+        h4 {
+          font-size: 1.5rem;
+          margin: 1rem;
+        }
+
+        p {
+          margin: 0.7rem;
+        }
+
+        button {
+          padding: 1rem;
+          margin: 1rem;
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        animation: make3DBorder ease-in-out 1.2s infinite;
+      }
+
+      &:hover .item-text {
+        animation: workItemText ease-in-out 0.7s forwards;
+      }
+    }
+  }
+}
+
+//skills
+#skills {
+  width: 90vw;
+  position: relative;
+  overflow: hidden;
+
+  #skills-bg {
+    color: lighten(#000000, 5%);
+    position: absolute;
+    display: inline-block;
+    transform-origin: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    letter-spacing: 1.2rem;
+    z-index: -1;
+
+    @include mediaQ($phablet) {
+      font-size: 23rem;
+    }
+    @include mediaQ($tablet) {
+      font-size: 26rem;
+    }
+
+    @include mediaQ($laptop) {
+      font-size: 45rem;
+    }
+  }
+
+  h2 {
+    @include section-header();
+    margin: 3rem;
+  }
+
+  #skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-gap: 2rem;
+    margin: 2rem;
+    text-align: center;
+
+    h4 {
+      margin: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+//contact
+#contact {
+  width: 50vw;
+
+  h2 {
+    @include section-header();
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 1em;
+
+    li {
+      margin: 1rem;
+      padding: 1rem;
+      font-size: 1.5rem;
+
+      i {
+        margin: 1.5rem;
+      }
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          animation: make3DText ease-in-out 0.7s infinite;
+        }
+      }
+    }
+  }
+}
+
+//animations
+@keyframes make3DText {
+  0%,
+  100% {
+    text-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    text-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    text-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    text-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@keyframes make3DBorder {
+  0%,
+  100% {
+    box-shadow: 0px 0px 2px red, 0px 0px 2px blue;
+  }
+  25% {
+    box-shadow: 2px 0px 2px red, -2px 0px 2px blue;
+  }
+  50% {
+    box-shadow: 0px -4px 2px red, 0px 4px 2px blue;
+  }
+  75% {
+    box-shadow: 4px -2px 2px red, -4px 2px 2px blue;
+  }
+}
+
+@keyframes workItemText {
+  from {
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 100%,
+      100% 100%,
+      100% 0%
+    );
+    opacity: 0;
+  }
+  to {
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      51% 100%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      16% 100%,
+      100% 100%,
+      100% 0%
+    );
+    opacity: 1;
+  }
+}
