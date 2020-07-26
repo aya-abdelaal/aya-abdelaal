@@ -347,10 +347,6 @@ header #header-ctas {
   font-size: 1.5rem;
 }
 
-#contact {
-  width: 90vw;
-}
-
 @media screen and (min-width: 481px) {
   #contact {
     width: 70vw;
