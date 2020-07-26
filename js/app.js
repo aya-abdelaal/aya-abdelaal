@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   tl.from("#header-content", {
     scale: 0,
     ease: "back.out(1.7)",
-    duration: 2.5,
+    duration: 2,
   })
     .to(".tags", { duration: 1.5, opacity: 1 })
     .to(
@@ -13,9 +13,9 @@ window.addEventListener("DOMContentLoaded", () => {
         duration: 1.5,
         opacity: 1,
         bottom: 0,
-        stagger: 1,
+        stagger: 0.7,
       },
-      "-=2"
+      "-=1.5"
     );
 
   //show/hide navbar when leaving/entering header
